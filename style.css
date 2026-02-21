@@ -83,8 +83,8 @@ nav.scrolled .nav-links a { color: var(--muted); }
 .hero-bg {
   position: absolute; inset: 0;
   background:
-    linear-gradient(160deg, rgba(44,24,16,0.28) 0%, rgba(44,24,16,0.68) 100%),
-    url('https://images.unsplash.com/photo-1627895776527-2e5e28cf6614?w=1600&q=80') center/cover no-repeat;
+    linear-gradient(160deg, rgba(20,15,5,0.35) 0%, rgba(20,15,5,0.72) 100%),
+    url('https://images.unsplash.com/photo-1586201375761-83865001e31c?w=1600&q=80') center/cover no-repeat;
   transform: scale(1.04);
   animation: heroPan 22s ease-in-out infinite alternate;
 }
