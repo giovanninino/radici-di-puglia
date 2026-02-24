@@ -86,6 +86,13 @@ nav.scrolled .nav-logo { color: var(--earth); }
 nav.scrolled .nav-links a { color: var(--muted); }
 .nav-links a:hover { color: var(--terra) !important; }
 
+.lang-switch { display: flex; align-items: center; gap: 0.4rem; }
+.lang-btn { background: none; border: none; cursor: pointer; font-family: var(--sans); font-size: 0.75rem; letter-spacing: 0.14em; color: rgba(255,255,255,0.7); padding: 0.2rem 0.3rem; transition: color 0.3s; }
+.lang-btn.active { color: var(--terra-light); font-weight: 500; }
+nav.scrolled .lang-btn { color: var(--muted); }
+nav.scrolled .lang-btn.active { color: var(--terra); }
+.lang-switch span { color: rgba(255,255,255,0.3); font-size: 0.7rem; }
+nav.scrolled .lang-switch span { color: rgba(44,24,16,0.3); }
 /* ─── HERO ─── */
 .hero {
   position: relative; height: 100vh; min-height: 640px;
@@ -336,10 +343,10 @@ footer {
     <a href="#" class="nav-logo">Radici di Puglia</a>
     <ul class="nav-links">
       <li><a href="#why">Why Us</a></li>
-      <li><a href="#tour">The Tour</a></li>
-      <li><a href="#van">Our Van</a></li>
-      <li><a href="#team">Who We Are</a></li>
-      <li><a href="#book">Book Now</a></li>
+      <li><a href="#tour" data-en="The Tour" data-it="Il Tour">The Tour</a></li>
+      <li><a href="#van" data-en="Our Van" data-it="Il Furgone">Our Van</a></li>
+      <li><a href="#team" data-en="Who We Are" data-it="Chi Siamo">Who We Are</a></li>
+      <li><a href="#book" data-en="Book Now" data-it="Prenota">Book Now</a></li>
     </ul>
     <!-- Mobile menu button (shown on small screens via CSS) -->
     <button id="menu-btn" aria-label="Open menu" aria-expanded="false" style="display:none; background:none; border:none; cursor:pointer; padding:0.5rem;">
@@ -347,22 +354,23 @@ footer {
       <span style="display:block;width:24px;height:2px;background:currentColor;margin:5px 0;"></span>
       <span style="display:block;width:24px;height:2px;background:currentColor;margin:5px 0;"></span>
     </button>
+<div class="lang-switch"><button class="lang-btn active" onclick="setLang('en')">EN</button><span>|</span><button class="lang-btn" onclick="setLang('it')">IT</button></div>
   </nav>
 
   <!-- ─── HERO ─── -->
   <section class="hero" id="home">
     <div class="hero-bg"></div>
-    <span class="hero-tag">Carovigno, Puglia · Southern Italy</span>
+    <span class="hero-tag" data-en="Carovigno, Puglia · Southern Italy" data-it="Carovigno, Puglia · Italia del Sud">Carovigno, Puglia · Southern Italy</span>
     <h1 class="hero-title">
-      Discover the <em>hidden soul</em><br>of Puglia
+      <span data-en="Discover the" data-it="Scopri">Discover the</span> <em data-en="hidden soul" data-it="l'anima nascosta">hidden soul</em><br><span data-en="of Puglia" data-it="della Puglia">of Puglia</span>
     </h1>
-    <p class="hero-sub">
+    <p class="hero-sub" data-en="Private small-group tours through ancient masserie, olive groves and secret coastlines — with two friends who grew up here." data-it="Tour privati in piccoli gruppi tra antiche masserie, uliveti e coste segrete — con due amici che sono cresciuti qui.">
       Private small-group tours through ancient masserie, olive groves and secret coastlines — with two friends who grew up here.
     </p>
-    <a href="#book" class="hero-cta">Book Your Experience →</a>
+    <a href="#book" class="hero-cta" data-en="Book Your Experience →" data-it="Prenota la Tua Esperienza →">Book Your Experience →</a>
     <div class="hero-scroll">
       <div class="scroll-line"></div>
-      <span>Scroll</span>
+      <span data-en="Scroll" data-it="Scorri">Scroll</span>
     </div>
   </section>
 
@@ -370,79 +378,79 @@ footer {
   <div class="intro-strip">
     <div class="intro-stat">
       <span class="stat-num">6–7</span>
-      <span class="stat-label">guests maximum</span>
+      <span class="stat-label" data-en="guests maximum" data-it="ospiti massimo">guests maximum</span>
     </div>
     <div class="intro-divider"></div>
     <div class="intro-stat">
       <span class="stat-num">2–3h</span>
-      <span class="stat-label">immersive experience</span>
+      <span class="stat-label" data-en="immersive experience" data-it="esperienza immersiva">immersive experience</span>
     </div>
     <div class="intro-divider"></div>
     <div class="intro-stat">
       <span class="stat-num">100%</span>
-      <span class="stat-label">tailored to you</span>
+      <span class="stat-label" data-en="tailored to you" data-it="su misura per te">tailored to you</span>
     </div>
     <div class="intro-divider"></div>
     <div class="intro-stat">
       <span class="stat-num">Born</span>
-      <span class="stat-label">here. Always local.</span>
+      <span class="stat-label" data-en="here. Always local." data-it="qui. Sempre locali.">here. Always local.</span>
     </div>
   </div>
 
   <!-- ─── WHY US ─── -->
   <section class="why-section" id="why">
     <div class="reveal" style="max-width:700px">
-      <span class="section-label">Why Radici di Puglia</span>
-      <h2 class="section-title">What makes us <em>different</em></h2>
+      <span class="section-label" data-en="Why Radici di Puglia" data-it="Perché Radici di Puglia">Why Radici di Puglia</span>
+      <h2 class="section-title"><span data-en="What makes us" data-it="Cosa ci rende">What makes us</span> <em data-en="different" data-it="diversi">different</em></h2>
     </div>
     <div class="why-grid">
 
       <div class="why-card reveal">
         <span class="why-num">01</span>
         <span class="why-icon">✦</span>
-        <h3>A Real Working Farm — Not a Tourist Show</h3>
-        <p>Donatello's family, Azienda Agricola Pietra Santa, is a generations-old working farm. When you visit, you see real production — olive oil actually being pressed, cheese genuinely being made. No actors, no scripts.</p>
-        <div class="why-vs">vs. staged "agriturismo" experiences sold on booking platforms</div>
+        <h3 data-en="A Real Working Farm — Not a Tourist Show" data-it="Una Vera Fattoria — Non uno Spettacolo Turistico">A Real Working Farm — Not a Tourist Show</h3>
+        <p data-en="Donatello's family, Azienda Agricola Pietra Santa, is a generations-old working farm. When you visit, you see real production — olive oil actually being pressed, cheese genuinely being made. No actors, no scripts." data-it="La famiglia di Donatello, l'Azienda Agricola Pietra Santa, è una fattoria operativa da generazioni. Quando visiti, vedi vera produzione — olio d'oliva effettivamente pressato, formaggio genuinamente prodotto. Nessun attore, nessun copione.">Donatello's family, Azienda Agricola Pietra Santa, is a generations-old working farm. When you visit, you see real production — olive oil actually being pressed, cheese genuinely being made. No actors, no scripts.</p>
+        <div class="why-vs" data-en='vs. staged "agriturismo" experiences sold on booking platforms' data-it="vs. esperienze agrituristiche finte vendute su piattaforme di prenotazione">vs. staged "agriturismo" experiences sold on booking platforms</div>
       </div>
 
       <div class="why-card reveal reveal-delay-1">
         <span class="why-num">02</span>
         <span class="why-icon">◈</span>
-        <h3>Born & Raised Here — Not a Hired Guide</h3>
-        <p>Donatello grew up in Carovigno and knows every hidden path, every farmer, every secret cove. Giovanni lived abroad for years and came back with fresh eyes. Local depth meets traveller perspective.</p>
-        <div class="why-vs">vs. professional guides based in Bari or Brindisi</div>
+        <h3 data-en="Born & Raised Here — Not a Hired Guide" data-it="Nato e Cresciuto Qui — Non una Guida di Mestiere">Born & Raised Here — Not a Hired Guide</h3>
+        <p data-en="Donatello grew up in Carovigno and knows every hidden path, every farmer, every secret cove. Giovanni lived abroad for years and came back with fresh eyes. Local depth meets traveller perspective." data-it="Donatello è cresciuto a Carovigno e conosce ogni sentiero nascosto, ogni contadino, ogni caletta segreta. Giovanni ha vissuto all'estero per anni ed è tornato con occhi nuovi. Profondità locale incontra prospettiva da viaggiatore.">Donatello grew up in Carovigno and knows every hidden path, every farmer, every secret cove. Giovanni lived abroad for years and came back with fresh eyes. Local depth meets traveller perspective.</p>
+        <div class="why-vs" data-en="vs. professional guides based in Bari or Brindisi" data-it="vs. guide professioniste con base a Bari o Brindisi">vs. professional guides based in Bari or Brindisi</div>
       </div>
 
       <div class="why-card reveal reveal-delay-2">
         <span class="why-num">03</span>
         <span class="why-icon">◎</span>
-        <h3>The Van That Becomes a Memory</h3>
-        <p>Our vintage Fiat Panorama "Peace & Love" is iconic. Rolling through Puglia in this van is itself an experience you'll talk about for years — before you even arrive at the masseria.</p>
-        <div class="why-vs">vs. generic minibuses or tourist coaches</div>
+        <h3 data-en="The Van That Becomes a Memory" data-it="Il Furgone Che Diventa un Ricordo">The Van That Becomes a Memory</h3>
+        <p data-en='Our vintage Fiat Panorama "Peace &amp; Love" is iconic. Rolling through Puglia in this van is itself an experience you&apos;ll talk about for years — before you even arrive at the masseria.' data-it='Il nostro Fiat Panorama d&apos;epoca "Peace &amp; Love" è iconico. Viaggiare per la Puglia su questo furgone è di per sé un&apos;esperienza di cui parlerai per anni — ancora prima di arrivare alla masseria.'>Our vintage Fiat Panorama "Peace & Love" is iconic. Rolling through Puglia in this van is itself an experience you'll talk about for years — before you even arrive at the masseria.</p>
+        <div class="why-vs" data-en="vs. generic minibuses or tourist coaches" data-it="vs. minibus generici o pullman turistici">vs. generic minibuses or tourist coaches</div>
       </div>
 
       <div class="why-card reveal">
         <span class="why-num">04</span>
         <span class="why-icon">⊕</span>
-        <h3>Countryside + Sea in One Tour</h3>
-        <p>Most operators choose one or the other. We combine ancient olive groves with the hidden Adriatic coastline — including Torre Guaceto, one of Italy's most protected marine reserves.</p>
-        <div class="why-vs">vs. single-focus tours (only farm, or only coast)</div>
+        <h3 data-en="Countryside + Sea in One Tour" data-it="Campagna + Mare in Un Solo Tour">Countryside + Sea in One Tour</h3>
+        <p data-en="Most operators choose one or the other. We combine ancient olive groves with the hidden Adriatic coastline — including Torre Guaceto, one of Italy's most protected marine reserves." data-it="La maggior parte degli operatori sceglie l'uno o l'altro. Noi combiniamo antichi uliveti con la costa adriatica nascosta — inclusa Torre Guaceto, una delle riserve marine più protette d'Italia.">Most operators choose one or the other. We combine ancient olive groves with the hidden Adriatic coastline — including Torre Guaceto, one of Italy's most protected marine reserves.</p>
+        <div class="why-vs" data-en="vs. single-focus tours (only farm, or only coast)" data-it="vs. tour monotematici (solo fattoria, o solo costa)">vs. single-focus tours (only farm, or only coast)</div>
       </div>
 
       <div class="why-card reveal reveal-delay-1">
         <span class="why-num">05</span>
         <span class="why-icon">◇</span>
-        <h3>Truly Tailored — Every Group Is Unique</h3>
-        <p>We don't run a fixed programme. Tell us what you love — the sea, the food, photography, local history — and we build the afternoon around you. Maximum 6–7 guests means you're never just a number.</p>
-        <div class="why-vs">vs. fixed bus tours for 15–20 strangers</div>
+        <h3 data-en="Truly Tailored — Every Group Is Unique" data-it="Davvero Su Misura — Ogni Gruppo È Unico">Truly Tailored — Every Group Is Unique</h3>
+        <p data-en="We don't run a fixed programme. Tell us what you love — the sea, the food, photography, local history — and we build the afternoon around you. Maximum 6–7 guests means you're never just a number." data-it="Non seguiamo un programma fisso. Dicci cosa ami — il mare, il cibo, la fotografia, la storia locale — e costruiamo il pomeriggio intorno a te. Massimo 6–7 ospiti significa che non sei mai solo un numero.">We don't run a fixed programme. Tell us what you love — the sea, the food, photography, local history — and we build the afternoon around you. Maximum 6–7 guests means you're never just a number.</p>
+        <div class="why-vs" data-en="vs. fixed bus tours for 15–20 strangers" data-it="vs. tour in bus fissi per 15–20 sconosciuti">vs. fixed bus tours for 15–20 strangers</div>
       </div>
 
       <div class="why-card reveal reveal-delay-2">
         <span class="why-num">06</span>
         <span class="why-icon">◉</span>
-        <h3>Picci Bar — Already a Local Icon</h3>
-        <p>Giovanni's Picci Bar is a recognised landmark of Carovigno. This gives Radici di Puglia a real presence, a place to meet and gather, and a reputation already trusted by travellers visiting the area.</p>
-        <div class="why-vs">vs. operators with no local base or storefront</div>
+        <h3 data-en="Picci Bar — Already a Local Icon" data-it="Picci Bar — Già un'Icona Locale">Picci Bar — Already a Local Icon</h3>
+        <p data-en="Giovanni's Picci Bar is a recognised landmark of Carovigno. This gives Radici di Puglia a real presence, a place to meet and gather, and a reputation already trusted by travellers visiting the area." data-it="Il Picci Bar di Giovanni è un punto di riferimento riconosciuto di Carovigno. Questo dà a Radici di Puglia una presenza reale, un luogo dove incontrarsi, e una reputazione già apprezzata dai viaggiatori che visitano la zona.">Giovanni's Picci Bar is a recognised landmark of Carovigno. This gives Radici di Puglia a real presence, a place to meet and gather, and a reputation already trusted by travellers visiting the area.</p>
+        <div class="why-vs" data-en="vs. operators with no local base or storefront" data-it="vs. operatori senza base locale o punto fisico">vs. operators with no local base or storefront</div>
       </div>
 
     </div>
@@ -452,51 +460,51 @@ footer {
   <section class="tour-section" id="tour">
     <div class="tour-grid">
       <div class="tour-text reveal">
-        <span class="section-label">The Experience</span>
-        <h2 class="section-title">Not a tourist route.<br>A <em>local secret</em>.</h2>
-        <p>We take you off the beaten path — to the masserie that have been producing olive oil and cheese for centuries, to coastlines that don't appear on any map, to flavours that can only be found here.</p>
-        <p>Every tour is shaped around you. Tell us what you love — the sea, the food, the animals, the ancient stones — and we'll build the perfect afternoon.</p>
-        <p>We travel in our vintage Fiat Panorama, together, like old friends.</p>
+        <span class="section-label" data-en="The Experience" data-it="L'Esperienza">The Experience</span>
+        <h2 class="section-title"><span data-en="Not a tourist route." data-it="Non un percorso turistico.">Not a tourist route.</span><br><span data-en="A" data-it="Un">A</span> <em data-en="local secret" data-it="segreto locale">local secret</em>.</h2>
+        <p data-en="We take you off the beaten path — to the masserie that have been producing olive oil and cheese for centuries, to coastlines that don't appear on any map, to flavours that can only be found here." data-it="Ti portiamo fuori dai sentieri battuti — alle masserie che producono olio d'oliva e formaggio da secoli, a coste che non appaiono su nessuna mappa, a sapori che si trovano solo qui.">We take you off the beaten path — to the masserie that have been producing olive oil and cheese for centuries, to coastlines that don't appear on any map, to flavours that can only be found here.</p>
+        <p data-en="Every tour is shaped around you. Tell us what you love — the sea, the food, the animals, the ancient stones — and we'll build the perfect afternoon." data-it="Ogni tour è modellato intorno a te. Dicci cosa ami — il mare, il cibo, gli animali, le pietre antiche — e costruiremo il pomeriggio perfetto.">Every tour is shaped around you. Tell us what you love — the sea, the food, the animals, the ancient stones — and we'll build the perfect afternoon.</p>
+        <p data-en="We travel in our vintage Fiat Panorama, together, like old friends." data-it="Viaggiamo nel nostro Fiat Panorama d'epoca, insieme, come vecchi amici.">We travel in our vintage Fiat Panorama, together, like old friends.</p>
       </div>
       <div class="tour-highlights reveal reveal-delay-2">
 
         <div class="highlight-item">
           <span class="highlight-icon">🫒</span>
           <div class="highlight-content">
-            <h4>Olive Oil Making</h4>
-            <p>Visit a working frantoio and see how Puglia's liquid gold is pressed — then taste the difference for yourself.</p>
+            <h4 data-en="Olive Oil Making" data-it="Produzione dell'Olio d'Oliva">Olive Oil Making</h4>
+            <p data-en="Visit a working frantoio and see how Puglia's liquid gold is pressed — then taste the difference for yourself." data-it="Visita un frantoio attivo e scopri come viene prodotto l'oro liquido della Puglia — poi assapora la differenza di persona.">Visit a working frantoio and see how Puglia's liquid gold is pressed — then taste the difference for yourself.</p>
           </div>
         </div>
 
         <div class="highlight-item">
           <span class="highlight-icon">🧀</span>
           <div class="highlight-content">
-            <h4>Cheese & Mozzarella</h4>
-            <p>Watch local artisans stretch, shape and age the cheeses that define this region. Mozzarella pulled fresh, still warm.</p>
+            <h4 data-en="Cheese & Mozzarella" data-it="Formaggio e Mozzarella">Cheese & Mozzarella</h4>
+            <p data-en="Watch local artisans stretch, shape and age the cheeses that define this region. Mozzarella pulled fresh, still warm." data-it="Guarda gli artigiani locali lavorare, formare e stagionare i formaggi che definiscono questa regione. Mozzarella tirata fresca, ancora calda.">Watch local artisans stretch, shape and age the cheeses that define this region. Mozzarella pulled fresh, still warm.</p>
           </div>
         </div>
 
         <div class="highlight-item">
           <span class="highlight-icon">🌊</span>
           <div class="highlight-content">
-            <h4>Hidden Coastline</h4>
-            <p>Secret coves and sea-facing spots between Torre Guaceto and the Adriatic cliffs — not in any guidebook.</p>
+            <h4 data-en="Hidden Coastline" data-it="Costa Nascosta">Hidden Coastline</h4>
+            <p data-en="Secret coves and sea-facing spots between Torre Guaceto and the Adriatic cliffs — not in any guidebook." data-it="Calette segrete e angoli affacciati sul mare tra Torre Guaceto e le scogliere adriatiche — non su nessuna guida.">Secret coves and sea-facing spots between Torre Guaceto and the Adriatic cliffs — not in any guidebook.</p>
           </div>
         </div>
 
         <div class="highlight-item">
           <span class="highlight-icon">🍷</span>
           <div class="highlight-content">
-            <h4>Food Tasting</h4>
-            <p>Every tour ends with a curated tasting — cheeses, salumi, taralli, local wine and olive oil on fresh bread.</p>
+            <h4 data-en="Food Tasting" data-it="Degustazione">Food Tasting</h4>
+            <p data-en="Every tour ends with a curated tasting — cheeses, salumi, taralli, local wine and olive oil on fresh bread." data-it="Ogni tour si conclude con una degustazione curata — formaggi, salumi, taralli, vino locale e olio d'oliva su pane fresco.">Every tour ends with a curated tasting — cheeses, salumi, taralli, local wine and olive oil on fresh bread.</p>
           </div>
         </div>
 
         <div class="highlight-item">
           <span class="highlight-icon">🐄</span>
           <div class="highlight-content">
-            <h4>Masseria Life</h4>
-            <p>Meet the animals, walk the land, understand the rhythms of a working Puglian farm that has fed families for generations.</p>
+            <h4 data-en="Masseria Life" data-it="La Vita in Masseria">Masseria Life</h4>
+            <p data-en="Meet the animals, walk the land, understand the rhythms of a working Puglian farm that has fed families for generations." data-it="Incontra gli animali, cammina sulla terra, comprendi i ritmi di una fattoria pugliese che ha nutrito famiglie per generazioni.">Meet the animals, walk the land, understand the rhythms of a working Puglian farm that has fed families for generations.</p>
           </div>
         </div>
 
@@ -507,8 +515,8 @@ footer {
   <!-- ─── EXPERIENCES MOSAIC ─── -->
   <section class="experiences-section" id="experiences">
     <div class="reveal">
-      <span class="section-label">What Awaits You</span>
-      <h2 class="section-title">Every turn, a <em>new wonder</em></h2>
+      <span class="section-label" data-en="What Awaits You" data-it="Cosa Ti Aspetta">What Awaits You</span>
+      <h2 class="section-title"><span data-en="Every turn, a" data-it="Ad ogni svolta, una">Every turn, a</span> <em data-en="new wonder" data-it="nuova meraviglia">new wonder</em></h2>
     </div>
     <div class="exp-mosaic">
 
@@ -563,9 +571,9 @@ footer {
   <!-- ─── THE VAN ─── -->
   <section class="van-section" id="van">
     <div class="van-intro reveal">
-      <span class="section-label">Our Ride</span>
-      <h2 class="section-title">Meet <em>Peace & Love</em></h2>
-      <p>Our vintage Fiat Panorama 900 isn't just how we get around — it's part of the experience. Rolling through ancient olive groves and Puglian countryside in this iconic van, you feel the spirit of the place before you even step out. There is no tour van in Puglia quite like this one.</p>
+      <span class="section-label" data-en="Our Ride" data-it="Il Nostro Mezzo">Our Ride</span>
+      <h2 class="section-title"><span data-en="Meet" data-it="Ecco">Meet</span> <em>Peace & Love</em></h2>
+      <p data-en="Our vintage Fiat Panorama 900 isn't just how we get around — it's part of the experience. Rolling through ancient olive groves and Puglian countryside in this iconic van, you feel the spirit of the place before you even step out." data-it="Il nostro Fiat Panorama 900 d'epoca non è solo il nostro mezzo — è parte dell'esperienza. Viaggiare tra antichi uliveti e campagna pugliese su questo iconico furgone, senti lo spirito del luogo ancora prima di scendere.">Our vintage Fiat Panorama 900 isn't just how we get around — it's part of the experience. Rolling through ancient olive groves and Puglian countryside in this iconic van, you feel the spirit of the place before you even step out. There is no tour van in Puglia quite like this one.</p>
     </div>
     <div class="van-gallery">
       <div class="van-main reveal reveal-delay-1">
@@ -586,47 +594,47 @@ footer {
   <!-- ─── PRICING ─── -->
   <section class="pricing-section" id="pricing">
     <div class="reveal" style="text-align:center">
-      <span class="section-label">Pricing</span>
-      <h2 class="section-title">Simple. <em>Transparent</em>. Flexible.</h2>
+      <span class="section-label" data-en="Pricing" data-it="Prezzi">Pricing</span>
+      <h2 class="section-title"><span data-en="Simple." data-it="Semplice.">Simple.</span> <em data-en="Transparent" data-it="Trasparente">Transparent</em>. <span data-en="Flexible." data-it="Flessibile.">Flexible.</span></h2>
     </div>
     <div class="pricing-grid">
 
       <div class="price-card reveal reveal-delay-1">
-        <div class="price-title">Classic Tour</div>
+        <div class="price-title" data-en="Classic Tour" data-it="Tour Classico">Classic Tour</div>
         <div class="price-num"><sup>€</sup>50<sub> / person</sub></div>
-        <div class="price-desc">A perfect introduction to Puglia's countryside and flavours.</div>
+        <div class="price-desc" data-en="A perfect introduction to Puglia's countryside and flavours." data-it="Un'introduzione perfetta alla campagna e ai sapori della Puglia.">A perfect introduction to Puglia's countryside and flavours.</div>
         <ul class="price-features">
-          <li class="price-feature">2 hours guided experience</li>
-          <li class="price-feature">Masseria visit</li>
-          <li class="price-feature">Food tasting</li>
-          <li class="price-feature">Up to 6 guests</li>
+          <li class="price-feature" data-en="2 hours guided experience" data-it="2 ore di esperienza guidata">2 hours guided experience</li>
+          <li class="price-feature" data-en="Masseria visit" data-it="Visita alla masseria">Masseria visit</li>
+          <li class="price-feature" data-en="Food tasting" data-it="Degustazione">Food tasting</li>
+          <li class="price-feature" data-en="Up to 6 guests" data-it="Fino a 6 ospiti">Up to 6 guests</li>
         </ul>
       </div>
 
       <div class="price-card featured reveal reveal-delay-2">
-        <span class="price-badge">Most Popular</span>
-        <div class="price-title">Full Experience</div>
+        <span class="price-badge" data-en="Most Popular" data-it="Più Richiesto">Most Popular</span>
+        <div class="price-title" data-en="Full Experience" data-it="Esperienza Completa">Full Experience</div>
         <div class="price-num"><sup>€</sup>65<sub> / person</sub></div>
-        <div class="price-desc">The complete journey — countryside, sea, food and van vibes.</div>
+        <div class="price-desc" data-en="The complete journey — countryside, sea, food and van vibes." data-it="Il viaggio completo — campagna, mare, cibo e atmosfera del furgone.">The complete journey — countryside, sea, food and van vibes.</div>
         <ul class="price-features">
-          <li class="price-feature">3 hours guided experience</li>
-          <li class="price-feature">Countryside + coastline</li>
-          <li class="price-feature">Cheese & olive oil making demo</li>
-          <li class="price-feature">Extended food tasting</li>
-          <li class="price-feature">Up to 7 guests</li>
+          <li class="price-feature" data-en="3 hours guided experience" data-it="3 ore di esperienza guidata">3 hours guided experience</li>
+          <li class="price-feature" data-en="Countryside + coastline" data-it="Campagna + costa">Countryside + coastline</li>
+          <li class="price-feature" data-en="Cheese & olive oil making demo" data-it="Dimostrazione di formaggio e olio d'oliva">Cheese & olive oil making demo</li>
+          <li class="price-feature" data-en="Extended food tasting" data-it="Degustazione estesa">Extended food tasting</li>
+          <li class="price-feature" data-en="Up to 7 guests" data-it="Fino a 7 ospiti">Up to 7 guests</li>
         </ul>
       </div>
 
       <div class="price-card reveal reveal-delay-3">
-        <div class="price-title">Tailored Tour</div>
+        <div class="price-title" data-en="Tailored Tour" data-it="Tour Su Misura">Tailored Tour</div>
         <div class="price-num"><sup>€</sup>80<sub> / person</sub></div>
-        <div class="price-desc">Fully customised — we build the perfect afternoon around you.</div>
+        <div class="price-desc" data-en="Fully customised — we build the perfect afternoon around you." data-it="Completamente personalizzato — costruiamo il pomeriggio perfetto intorno a te.">Fully customised — we build the perfect afternoon around you.</div>
         <ul class="price-features">
-          <li class="price-feature">Your chosen duration & route</li>
-          <li class="price-feature">Private group experience</li>
-          <li class="price-feature">Custom itinerary</li>
-          <li class="price-feature">Seasonal surprises</li>
-          <li class="price-feature">Pick-up from Carovigno</li>
+          <li class="price-feature" data-en="Your chosen duration & route" data-it="Durata e percorso a tua scelta">Your chosen duration & route</li>
+          <li class="price-feature" data-en="Private group experience" data-it="Esperienza di gruppo privato">Private group experience</li>
+          <li class="price-feature" data-en="Custom itinerary" data-it="Itinerario personalizzato">Custom itinerary</li>
+          <li class="price-feature" data-en="Seasonal surprises" data-it="Sorprese stagionali">Seasonal surprises</li>
+          <li class="price-feature" data-en="Pick-up from Carovigno" data-it="Ritiro da Carovigno">Pick-up from Carovigno</li>
         </ul>
       </div>
 
@@ -636,8 +644,8 @@ footer {
   <!-- ─── TEAM ─── -->
   <section class="team-section" id="team">
     <div class="reveal" style="max-width:680px">
-      <span class="section-label">Who We Are</span>
-      <h2 class="section-title">Two friends, one deep <em>love for Puglia</em></h2>
+      <span class="section-label" data-en="Who We Are" data-it="Chi Siamo">Who We Are</span>
+      <h2 class="section-title"><span data-en="Two friends, one deep" data-it="Due amici, un profondo">Two friends, one deep</span> <em data-en="love for Puglia" data-it="amore per la Puglia">love for Puglia</em></h2>
     </div>
     <div class="team-grid">
 
@@ -648,9 +656,9 @@ footer {
         </div>
         <div>
           <div class="team-name">Giovanni Del Prete</div>
-          <div class="team-role">Co-founder · Host & Guide</div>
-          <span class="picci-tag">☕ Also: owner of Picci Bar, Carovigno</span>
-          <p class="team-bio">An engineering graduate who chose the world over a desk. Giovanni spent years working in hospitality across continents — absorbing cultures, flavours, and ways of welcoming strangers. Now he's back in Carovigno, and his mission is simple: share the region he loves with travellers ready to see it through a local's eyes.</p>
+          <div class="team-role" data-en="Co-founder · Host & Guide" data-it="Co-fondatore · Host e Guida">Co-founder · Host & Guide</div>
+          <span class="picci-tag" data-en="☕ Also: owner of Picci Bar, Carovigno" data-it="☕ Anche: proprietario del Picci Bar, Carovigno">☕ Also: owner of Picci Bar, Carovigno</span>
+          <p class="team-bio" data-en="An engineering graduate who chose the world over a desk. Giovanni spent years working in hospitality across continents — absorbing cultures, flavours, and ways of welcoming strangers. Now he's back in Carovigno, and his mission is simple: share the region he loves with travellers ready to see it through a local's eyes." data-it="Laureato in ingegneria che ha scelto il mondo invece di una scrivania. Giovanni ha trascorso anni nel settore dell'ospitalità in vari continenti — assorbendo culture, sapori e modi di accogliere gli stranieri. Ora è tornato a Carovigno, e la sua missione è semplice: condividere la regione che ama con i viaggiatori pronti a vederla attraverso gli occhi di un locale.">An engineering graduate who chose the world over a desk. Giovanni spent years working in hospitality across continents — absorbing cultures, flavours, and ways of welcoming strangers. Now he's back in Carovigno, and his mission is simple: share the region he loves with travellers ready to see it through a local's eyes.</p>
         </div>
       </div>
 
@@ -661,9 +669,9 @@ footer {
         </div>
         <div>
           <div class="team-name">Donatello Leobilla</div>
-          <div class="team-role">Co-founder · Local Expert & Farmer</div>
+          <div class="team-role" data-en="Co-founder · Local Expert & Farmer" data-it="Co-fondatore · Esperto Locale e Agricoltore">Co-founder · Local Expert & Farmer</div>
           <span class="picci-tag">🌿 Azienda Agricola Pietra Santa</span>
-          <p class="team-bio">Born and raised in Carovigno, Donatello is part of Azienda Agricola Pietra Santa — a family farm with generations of roots in this land. He knows every hidden path, every ancient olive tree, every farmer who still makes cheese the old way. The land isn't just his home — it's his identity.</p>
+          <p class="team-bio" data-en="Born and raised in Carovigno, Donatello is part of Azienda Agricola Pietra Santa — a family farm with generations of roots in this land. He knows every hidden path, every ancient olive tree, every farmer who still makes cheese the old way. The land isn't just his home — it's his identity." data-it="Nato e cresciuto a Carovigno, Donatello fa parte dell'Azienda Agricola Pietra Santa — una fattoria di famiglia con radici generazionali in questa terra. Conosce ogni sentiero nascosto, ogni ulivo antico, ogni contadino che ancora produce formaggio alla vecchia maniera. La terra non è solo la sua casa — è la sua identità.">Born and raised in Carovigno, Donatello is part of Azienda Agricola Pietra Santa — a family farm with generations of roots in this land. He knows every hidden path, every ancient olive tree, every farmer who still makes cheese the old way. The land isn't just his home — it's his identity.</p>
         </div>
       </div>
 
@@ -673,8 +681,8 @@ footer {
   <!-- ─── BOOKING ─── -->
   <section class="booking-section" id="book">
     <div class="booking-bg-deco"></div>
-    <span class="section-label reveal">Book Your Tour</span>
-    <h2 class="section-title reveal reveal-delay-1">Ready to see the <em>real Puglia?</em></h2>
+    <span class="section-label reveal" data-en="Book Your Tour" data-it="Prenota il Tuo Tour">Book Your Tour</span>
+    <h2 class="section-title reveal reveal-delay-1"><span data-en="Ready to see the" data-it="Pronti a scoprire la">Ready to see the</span> <em data-en="real Puglia?" data-it="vera Puglia?">real Puglia?</em></h2>
     <p class="booking-sub reveal reveal-delay-2">
       Write to us directly. Tell us your dates, how many you are, and what you'd love to experience — and we'll put together something special just for you. No booking platforms. No middlemen. Just us.
     </p>
@@ -682,20 +690,20 @@ footer {
        class="booking-email-btn reveal reveal-delay-3">
       ✉ &nbsp; Email Us to Book &nbsp; →
     </a>
-    <p class="booking-note reveal">We reply within 24 hours · Tours available year-round · Carovigno, Puglia</p>
+    <p class="booking-note reveal" data-en="We reply within 24 hours · Tours available year-round · Carovigno, Puglia" data-it="Rispondiamo entro 24 ore · Tour disponibili tutto l'anno · Carovigno, Puglia">We reply within 24 hours · Tours available year-round · Carovigno, Puglia</p>
   </section>
 
   <!-- ─── FOOTER ─── -->
   <footer>
     <a href="#home" class="footer-logo">Radici di Puglia</a>
     <div class="footer-links">
-      <a href="#tour">The Tour</a>
-      <a href="#van">Our Van</a>
-      <a href="#team">Who We Are</a>
-      <a href="#book">Book</a>
+      <a href="#tour" data-en="The Tour" data-it="Il Tour">The Tour</a>
+      <a href="#van" data-en="Our Van" data-it="Il Furgone">Our Van</a>
+      <a href="#team" data-en="Who We Are" data-it="Chi Siamo">Who We Are</a>
+      <a href="#book" data-en="Book" data-it="Prenota">Book</a>
     </div>
     <span class="footer-location">📍 Carovigno, Puglia, Southern Italy</span>
-    <span class="footer-copy">© 2025 Radici di Puglia. All rights reserved.</span>
+    <span class="footer-copy" data-en="© 2025 Radici di Puglia. All rights reserved." data-it="© 2025 Radici di Puglia. Tutti i diritti riservati.">© 2025 Radici di Puglia. All rights reserved.</span>
   </footer>
 
   <script>
@@ -756,6 +764,21 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+});
+
+function setLang(lang) {
+  document.querySelectorAll('[data-en]').forEach(el => {
+    el.textContent = el.getAttribute('data-' + lang);
+  });
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.textContent === lang.toUpperCase());
+  });
+  localStorage.setItem('lang', lang);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const saved = localStorage.getItem('lang') || 'en';
+  setLang(saved);
 });
 </script>
 </body>
